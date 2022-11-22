@@ -10,8 +10,8 @@ require "yaml"
 # Módulo $bot para global 
 module Bot
   CONFIG = YAML.load_file("./configbot.yaml")
-
-  $bot = Discordrb::Commands::CommandBot.new token: ENV["token"], client_id: CONFIG["$client_id"], prefix: CONFIG["$prefix"], ignore_bots: false, help_command: false
+  TOKEN = YAML.load_file("./token.yaml")
+  $bot = Discordrb::Commands::CommandBot.new token: TOKEN["$token"], client_id: CONFIG["$client_id"], prefix: CONFIG["$prefix"], ignore_bots: false, help_command: false
 
   def self.load_modules(klass, path)
     new_module = Module.new
