@@ -1,0 +1,9 @@
+source 'https://rubygems.org'
+  gem 'discordrb'
+  gem 'json'
+  gem 'cleverbot_io'
+  gem 'http'
+  gem 'rest-client'
+  gem "vigenere"
+  gem 'rspec'
+  gem 'rake'
