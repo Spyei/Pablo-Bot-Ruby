@@ -1,2 +1,2 @@
-$prefix: p!
+$prefix: ["p!", "P!"]
 $client_id: 1021810246462738432

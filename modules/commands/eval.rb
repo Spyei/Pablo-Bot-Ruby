@@ -2,11 +2,17 @@ module Bot::DiscordCommands
     module Eval
         extend Discordrb::Commands::CommandContainer
         command :eval do |event, *code|
-            break unless event.user.id == 955095844275781693 or event.user.id == 963124227911860264 or event.user.id == 834123622334988288 or event.user.id == 915677756958863372 or event.user.id == 481534167893540874
-            begin    
-                event.respond("\`\`\`ruby\n#{eval event.message.content.gsub 'p!eval ', ''}\n\`\`\`")
-        rescue => error
-            event.respond("\`\`\`ruby\n#{error}\n\`\`\`")
+            begin 
+                usuarios = ["955095844275781693"].include? "#{event.author.id}"
+                if event.message.content.length == 6
+                    event.respond("**( ❌ ) Digite algo para que eu possa executar**")
+                elsif usuarios == false
+                    event.respond("**( ❌ ) Você não tem permição para executar este comando**")
+                else
+                    event.respond("\`\`\`ruby\n#{eval event.message.content.gsub 'p!eval ', ''}\n\`\`\`")
+                end
+            rescue => error
+                event.respond("\`\`\`ruby\n#{error}\n\`\`\`")
             end 
         end
     end
