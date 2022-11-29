@@ -6,6 +6,7 @@ require "cleverbot"
 require "rest-client"
 require "vigenere"
 require "yaml"
+require "sequel"
 
 # Módulo $bot para global 
 module Bot
@@ -28,8 +29,21 @@ module Bot
     event.respond("Olá **#{event.author.username}##{event.author.discriminator}**, Sou o **Pablo bot#2109** fui feito para testar a lib \`Discord.rb (Ruby)\`\n> **Meu prefixo:** \`p!\`")
   end
 
+  $bot.message do |event|
+    sim = "#{event.message.content}".include? "https://"  
+    if sim == true
+      event.message.delete
+    end
+  end
+
+  $bot.message_update do |event|
+    sim = "#{event.message.content}".include? "https://"  
+    if sim == true
+      event.message.delete
+    end
+  end
+
   $bot.run :async # Ligar bot
 end
-# Módulo $bot para global 
 
 $bot.sync # Ligar bot 2.0

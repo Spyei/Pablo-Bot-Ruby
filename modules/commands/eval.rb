@@ -4,6 +4,7 @@ module Bot::DiscordCommands
         command :eval do |event, *code|
             begin 
                 usuarios = ["955095844275781693", "963124227911860264", "834123622334988288", "915677756958863372"].include? "#{event.author.id}"
+                DB = Sequel.sqlite("./database.db")
                 if event.message.content.length == 6
                     event.respond("**( ❌ ) Digite algo para que eu possa executar**")
                 elsif usuarios == false
