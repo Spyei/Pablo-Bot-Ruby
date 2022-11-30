@@ -10,6 +10,7 @@ require "sequel"
 
 # Módulo $bot para global 
 module Bot
+  $db = Sequel.sqlite("./database.db")
   CONFIG = YAML.load_file("./configbot.yaml")
   TOKEN = YAML.load_file("./token.yaml")
   $bot = Discordrb::Commands::CommandBot.new token: TOKEN["$token"], client_id: CONFIG["$client_id"], prefix: CONFIG["$prefix"], ignore_bots: false, help_command: false

@@ -1,5 +1,5 @@
 module Bot::DiscordCommands
-    module Avatar
+    module Userinfo
       extend Discordrb::Commands::CommandContainer
       command [:userinfo, :ui] do |event, user|
         begin

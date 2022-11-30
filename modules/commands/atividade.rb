@@ -1,5 +1,5 @@
 module Bot::DiscordCommands
-    module Eval
+    module Atividade
         extend Discordrb::Commands::CommandContainer
         command [:atividade, :atv] do |event, *code|
             begin 
