@@ -14,14 +14,15 @@ module Bot
   TOKEN = YAML.load_file("./token.yaml")
   $bot = Discordrb::Commands::CommandBot.new token: TOKEN["$token"], client_id: CONFIG["$client_id"], prefix: CONFIG["$prefix"], ignore_bots: false, help_command: false
 
-  def self.load_modules(klass, path)
+  def self.load_modules(cass, path)
     new_module = Module.new
-    const_set(klass.to_sym, new_module)
+    const_set(cass.to_sym, new_module)
     Dir["modules/#{path}/*.rb"].each { |file| load file }
     new_module.constants.each do |mod|
       $bot.include! new_module.const_get(mod)
     end
   end
+  
   load_modules(:DiscordEvents, "events")
   load_modules(:DiscordCommands, "commands")
 
@@ -29,6 +30,7 @@ module Bot
     event.respond("Olá **#{event.author.username}##{event.author.discriminator}**, Sou o **Pablo bot#2109** fui feito para testar a lib \`Discord.rb (Ruby)\`\n> **Meu prefixo:** \`p!\`")
   end
 
+=begin
   $bot.message do |event|
     sim = "#{event.message.content}".include? "https://"  
     if sim == true
@@ -42,6 +44,7 @@ module Bot
       event.message.delete
     end
   end
+=end
 
   $bot.run :async # Ligar bot
 end
