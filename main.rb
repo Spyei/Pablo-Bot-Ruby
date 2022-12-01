@@ -28,8 +28,12 @@ module Bot
   load_modules(:DiscordCommands, "commands")
 
   $bot.mention do |event|
-    event.respond("Olá **#{event.author.username}##{event.author.discriminator}**, Sou o **Pablo bot#2109** fui feito para testar a lib \`Discord.rb (Ruby)\`\n> **Meu prefixo:** \`p!\`")
+    event.respond("Olá **#{event.author.username}##{event.author.discriminator}**, Sou o **Pablo bot**!\n> **Meu prefixo:** \`p!\`")
   end
+
+  # Cooldowns
+  $bot.bucket :teste, delay: 60
+  $bot.bucket :work, delay: 120
 
 =begin
   $bot.message do |event|

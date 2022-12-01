@@ -13,7 +13,7 @@ module Bot::DiscordCommands
                 event.channel.send_embed do |embed|
                   embed.title = "**( 🏦 ) Saldo Báncario**";
                   embed.description = "<@#{user.id}>, tem  no total \`0\` 💸";
-                  embed.color = "ffffff"
+                  embed.color = "#2ECC71"
                   embed.footer = {
                     text: "#{user.username + '#' + user.tag}",
                     icon_url: "#{user.avatar_url}",
@@ -23,7 +23,7 @@ module Bot::DiscordCommands
               event.channel.send_embed do |embed|
                 embed.title = "**( 🏦 ) Saldo Báncario**";
                 embed.description = "<@#{user.id}>, tem  no total \`#{dabase[:quantia]}\` 💸";
-                embed.color = "ffffff"
+                embed.color = "2ECC71"
                 embed.footer = {
                   text: "#{user.username + '#' + user.tag}",
                   icon_url: "#{user.avatar_url}",
