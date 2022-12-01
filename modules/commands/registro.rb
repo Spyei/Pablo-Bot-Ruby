@@ -12,8 +12,8 @@ module Bot::DiscordCommands
                     text: "#{event.author.username + '#' + event.author.tag}",
                     icon_url: "#{event.user.avatar_url}",
                     }
+                    $db[:dinheiro].insert(user: "#{event.author.id}", quantia: 0)
                 end
-                $db[:dinheiro].insert(user: "#{event.author.id}", quantia: 0)
             else
                 event.respond("**( ❌ ) Você já está registrado na minha database**")
             end

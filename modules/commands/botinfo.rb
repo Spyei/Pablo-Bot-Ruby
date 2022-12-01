@@ -6,7 +6,7 @@ module Bot::DiscordCommands
           event.channel.send_embed do |embed|
           embed.title = "**( 🤖 ) Bot Info**";
           embed.add_field(name: "**( 👨‍💻 ) Desenvolvedor**", value: "> \`Spyei#7312\`", inline: false);
-          embed.add_field(name: "**( ℹ ) Informações**", value: "> Conto com \`#{event.bot.commands.size}\` comandos\n> Estou em \`#{ event.bot.servers.count}\` servidores\n> Fui programado em \`discord.rb\`", inline: false);
+          embed.add_field(name: "**( ℹ ) Informações**", value: "> Conto com \`#{event.bot.commands.size}\` comandos\n> Estou em \`#{ event.bot.servers.count}\` servidores\n> Fui programado em \`Ruby\`, utilizando a livraria \`discord.rb\`", inline: false);
           embed.color = "#ffffff";
           embed.footer = {
             text: "#{event.author.username + '#' + event.author.tag}",

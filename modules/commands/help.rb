@@ -6,6 +6,7 @@ module Bot::DiscordCommands
           event.channel.send_embed do |embed|
           embed.title = "**( ✨ ) Help Menu**";
           embed.add_field(name: "**( 🎈 ) Variados**", value: "\`p!avatar <usuário>, p!ping, p!qrcode <texto>, p!botinfo, p!userinfo, p!atividade\`", inline: false);
+          embed.add_field(name: "**( 💸 ) Economia**", value: "\`p!bal, p!registrar\`", inline: false);
           embed.color = "#ffffff";
           embed.footer = {
             text: "#{event.author.username + '#' + event.author.tag}",
