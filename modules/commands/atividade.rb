@@ -15,7 +15,7 @@ module Bot::DiscordCommands
                 else
                     event.respond "> **Nome:** \`#{s.name}\`\n> **Detalhes:** \`#{detalhes}\`\n> **Data de inicio:** <t:#{s.timestamps.start.to_i}:R>"
                 end
-            rescue NilClass => error
+            rescue StandardError => error
                 event.respond("**( ❌ ) A atividade é inválida**")
             end 
         end
