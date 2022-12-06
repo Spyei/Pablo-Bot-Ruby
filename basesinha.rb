@@ -5,6 +5,6 @@ module Bot::DiscordCommands
         # Código aqui
       rescue StandardError => error
         event.respond("**( ❌ ) Erro econtrado: \`\`\`ruby\n#{error}\n\`\`\`**")
-      end
     end
   end
+end
