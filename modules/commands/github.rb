@@ -5,7 +5,7 @@ module Bot::DiscordCommands
         b = URI("https://api.github.com/users/#{texto.join(" ")}")
         a = Net::HTTP.get(b)
         c = JSON.parse(a.to_s)
-        if texto.join(" ") == " "
+        if texto.join(" ") == ""
             event.respond "**( ❌ ) Digite algum usuário do Github**"
         elsif c["message"] == "Not Found"
             event.respond "**( ❌ ) O usuário não foi encontrado**"
