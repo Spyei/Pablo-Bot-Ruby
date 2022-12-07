@@ -7,6 +7,8 @@ require "rest-client"
 require "vigenere"
 require "yaml"
 require "sequel"
+require "net/http"
+require "json"
 
 # Módulo $bot para global 
 module Bot
