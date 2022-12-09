@@ -2,7 +2,7 @@ module Bot::DiscordCommands
     module Github
       extend Discordrb::Commands::CommandContainer
       command [:github, :git] do |event, *texto|
-        b = URI("https://api.github.com/users/#{texto.join(" ")}")
+        b = URI("https://api.github.com/users/#{texto.join(" ").gsub(" ", "+")}")
         a = Net::HTTP.get(b)
         c = JSON.parse(a.to_s)
         if texto.join(" ") == ""

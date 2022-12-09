@@ -29,8 +29,11 @@ module Bot
   load_modules(:DiscordEvents, "events")
   load_modules(:DiscordCommands, "commands")
 
-  $bot.mention do |event|
+  $bot.message do |event|
+    sim = ["<@1021810246462738432>", "<@!1021810246462738432>"].include? "#{event.message.content}"
+    if sim == true 
     event.respond("Olá **#{event.author.username}##{event.author.discriminator}**, Sou o **Pablo bot**!\n> **Meu prefixo:** \`p!\`")
+    end
   end
 
   # Cooldowns

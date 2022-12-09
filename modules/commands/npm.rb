@@ -2,7 +2,7 @@ module Bot::DiscordCommands
     module Npm
       extend Discordrb::Commands::CommandContainer
       command [:npm, :npmsearch] do |event, *texto|
-        pinto = URI("https://api.universal-network.xyz/npm?pkg=#{texto.join(" ")}")
+        pinto = URI("https://api.universal-network.xyz/npm?pkg=#{texto.join(" ").gsub(" ", "+")}")
         penis = Net::HTTP.get(pinto)
         porra = JSON.parse(penis.to_s)
         if texto.join(" ") == ""
