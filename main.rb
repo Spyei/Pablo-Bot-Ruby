@@ -20,7 +20,7 @@ module Bot
   def self.load_modules(cass, path)
     new_module = Module.new
     const_set(cass.to_sym, new_module)
-    Dir["modules/#{path}/*.rb"].each { |file| load file }
+    Dir["modules/#{path}/*.rb"].each{ |file| load file }
     new_module.constants.each do |mod|
       $bot.include! new_module.const_get(mod)
     end
