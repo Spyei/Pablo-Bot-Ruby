@@ -6,9 +6,9 @@ module Bot::DiscordCommands
         penis = Net::HTTP.get(pinto)
         porra = JSON.parse(penis.to_s)
         if texto.join(" ") == ""
-            event.respond "**( ❌ ) Digite algum local para ver o clima**"
+            event.respond "**( ❌ )** Digite algum local para ver o clima."
         elsif porra == []
-          event.respond "**( ❌ ) O local não foi encontrado**"
+          event.respond "**( ❌ )** O local não foi encontrado."
         else
         event.channel.send_embed do |embed|
         embed.title = "**( 🌡 ) Clima**"

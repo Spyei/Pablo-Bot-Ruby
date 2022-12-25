@@ -10,9 +10,9 @@ module Bot::DiscordCommands
                 randomnatorio = rand(100..300)
                 if dabase == nil
                   event.respond("**( ❌ ) Você precisa se registrar na minha database, use \`p!registrar\`**")
-                else dabase == nil
+                else
                   event.channel.send_embed do |embed|
-                    embed.title = "**( 💼 ) Trabalhar**";
+                    embed.title = "**( 💼 )** Trabalhar";
                     embed.description = "Você trabalhou como **#{trabalhos[rand(0..trabalhos.length)]}** e ganhou \`#{randomnatorio}\` 💸";
                     embed.color = "#2ECC71"
                     embed.footer = {

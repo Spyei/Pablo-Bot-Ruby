@@ -5,7 +5,7 @@ module Bot::DiscordCommands
         begin
             if $db[:dinheiro].where(user: "#{event.author.id}").first == nil
                 event.channel.send_embed do |embed|
-                    embed.title = "**( ✨ ) Registro**";
+                    embed.title = "**( ✨ )** Registro";
                     embed.description = "<@#{event.author.id}>, Você foi registrado com sucesso na minha database, agora pode usar os comandos de economia!";
                     embed.color = "#2ECC71";
                     embed.footer = {
@@ -15,7 +15,7 @@ module Bot::DiscordCommands
                     $db[:dinheiro].insert(user: "#{event.author.id}", quantia: 0)
                 end
             else
-                event.respond("**( ❌ ) Você já está registrado na minha database**")
+                event.respond("**( ❌ )** Você já está registrado na minha database.")
             end
         rescue StandardError => error
           event.respond("**( ❌ ) Erro econtrado: \`\`\`ruby\n#{error}\n\`\`\`**")

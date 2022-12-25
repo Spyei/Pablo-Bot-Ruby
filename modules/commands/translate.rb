@@ -9,9 +9,9 @@ module Bot::DiscordCommands
     penis = Net::HTTP.get(pinto)
     porra = JSON.parse(penis.to_s)
         if lang and texto == ""
-            event.respond "**( ❌ ) Use da seguinte forma: \`p!traduzir {linguagem}/{texto}\`**"
+            event.respond "**( ❌ )** Use da seguinte forma: \`p!traduzir {linguagem}/{texto}\`."
         elsif porra["translated"] == "The language \'#{lang.gsub("+", " ")}\' is not supported." 
-          event.respond "**( ❌ ) O idioma não foi encontrado**"
+          event.respond "**( ❌ )** O idioma não foi encontrado."
         else
             event.respond "#{porra["translated"]}"
         end

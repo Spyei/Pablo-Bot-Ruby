@@ -8,7 +8,7 @@ module Bot::DiscordCommands
                 s = user.activities.to_a.first
                 detalhes = s.details
                 if s == nil
-                    event.respond "**( ❌ ) O usuário ou você está sem atividade no momento**"
+                    event.respond "**( ❌ )** O usuário ou você está sem atividade no momento."
                 elsif detalhes == nil
                     detalhes = "sem detalhes"
                     event.respond "> **Nome:** \`#{s.name}\`\n> **Detalhes:** \`#{detalhes}\`\n> **Data de inicio:** <t:#{s.timestamps.start.to_i}:R>"
@@ -16,7 +16,7 @@ module Bot::DiscordCommands
                     event.respond "> **Nome:** \`#{s.name}\`\n> **Detalhes:** \`#{detalhes}\`\n> **Data de inicio:** <t:#{s.timestamps.start.to_i}:R>"
                 end
             rescue StandardError => error
-                event.respond("**( ❌ ) A atividade é inválida**")
+                event.respond("**( ❌ )** A atividade é inválida.")
             end 
         end
     end

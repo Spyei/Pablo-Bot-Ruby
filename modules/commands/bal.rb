@@ -8,10 +8,10 @@ module Bot::DiscordCommands
             dabase = $db[:dinheiro].where(user: "#{user.id}").first
             dabase_author = $db[:dinheiro].where(user: "#{event.author.id}").first
               if dabase == nil
-                event.respond("**( ❌ ) Você precisa se registrar na minha database, use \`p!registrar\`**")
+                event.respond("**( ❌ )** Você precisa se registrar na minha database, use \`p!registrar\`.")
               elsif dabase == nil
                 event.channel.send_embed do |embed|
-                  embed.title = "**( 🏦 ) Saldo Báncario**";
+                  embed.title = "**( 🏦 )** Saldo Báncario**";
                   embed.description = "<@#{user.id}>, tem  no total \`0\` 💸";
                   embed.color = "#2ECC71"
                   embed.footer = {
@@ -21,7 +21,7 @@ module Bot::DiscordCommands
               end      
               else
               event.channel.send_embed do |embed|
-                embed.title = "**( 🏦 ) Saldo Báncario**";
+                embed.title = "**( 🏦 )** Saldo Báncario";
                 embed.description = "<@#{user.id}>, tem  no total \`#{dabase[:quantia]}\` 💸";
                 embed.color = "2ECC71"
                 embed.footer = {

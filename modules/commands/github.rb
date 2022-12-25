@@ -6,9 +6,9 @@ module Bot::DiscordCommands
         a = Net::HTTP.get(b)
         c = JSON.parse(a.to_s)
         if texto.join(" ") == ""
-            event.respond "**( ❌ ) Digite algum usuário do Github**"
+            event.respond "**( ❌ )** Digite algum usuário do Github**."
         elsif c["message"] == "Not Found"
-            event.respond "**( ❌ ) O usuário não foi encontrado**"
+            event.respond "**( ❌ )** O usuário não foi encontrado**."
         else
         event.channel.send_embed do |embed|
             embed.title = "**( <:github:1050065986960752720> ) Github**";
