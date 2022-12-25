@@ -11,7 +11,7 @@ module Bot::DiscordCommands
                 event.respond("**( ❌ )** Você precisa se registrar na minha database, use \`p!registrar\`.")
               elsif dabase == nil
                 event.channel.send_embed do |embed|
-                  embed.title = "**( 🏦 )** Saldo Báncario**";
+                  embed.title = "**( 🏦 ) Saldo Báncario**";
                   embed.description = "<@#{user.id}>, tem  no total \`0\` 💸";
                   embed.color = "#2ECC71"
                   embed.footer = {
